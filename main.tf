@@ -175,7 +175,7 @@ module "db-master" {
   create_db_subnet_group = true                 #DB subnet group
 
   allocated_storage       = local.allocated_storage
-  backup_retention_period = 1 #Backups are required in order to create a replica
+  backup_retention_period = 1  #Backups are required in order to create a replica
   skip_final_snapshot     = true
   deletion_protection     = false
 
