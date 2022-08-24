@@ -230,3 +230,20 @@ module "launch_template_only" {
   instance_type = var.instance_type
 
 }
+
+#Launch Template Module1
+module "launch_template_only-1" {
+  source = "terraform-aws-modules/autoscaling/aws"
+
+  create = false
+  name   = "launch-template-only1-${var.env_name}"
+
+  vpc_zone_identifier = module.vpc.public_subnets
+  min_size            = 2
+  max_size            = 4
+  desired_capacity    = 2
+
+  image_id      = var.ami
+  instance_type = var.instance_type
+
+}
